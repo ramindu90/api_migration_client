@@ -279,7 +279,7 @@ public class ResourceModifier200 {
             transformer.setOutputProperty(OutputKeys.ENCODING, Charset.defaultCharset().toString());
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
-            transformer.transform(new DOMSource(document), new StreamResult(file));
+            transformer.transform(new DOMSource(document), new StreamResult(file.getPath()));
         } catch (TransformerConfigurationException e) {
             log.error("Transformer configuration error encountered while transforming file " + file.getName(), e);
         } catch (TransformerException e) {

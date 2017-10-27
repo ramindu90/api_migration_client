@@ -5,7 +5,7 @@ package org.wso2.carbon.apimgt.migration.client;
  */
 public class MainClass {
     public static void main(String[] args) {
-        String apiFilePath = "/Users/ramindu/Downloads/synapse-configsNew/default/api";
+        String apiFilePath = "/home/praminda/Desktop/ramindu/synapse-configsNew/synapse-configsNew/default/api";
         MigrateFrom18to19.synapseAPIMigration17_19(apiFilePath);
         MigrateFrom19to110.synapseAPIMigration19_110(apiFilePath);
         MigrateFrom110to200.synapseAPIMigration110_200(apiFilePath);

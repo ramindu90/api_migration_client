@@ -197,7 +197,7 @@ public class ResourceUtil {
             Transformer transformer = transformerFactory.newTransformer();
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(file);
+            StreamResult result = new StreamResult(file.getPath());
             transformer.transform(source, result);
         } catch (TransformerConfigurationException e) {
             handleException("Could not initiate TransformerFactory Builder.", e);
@@ -443,7 +443,7 @@ public class ResourceUtil {
             transformer.setOutputProperty(OutputKeys.INDENT, "yes");
             transformer.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "4");
             transformer.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "yes");
-            transformer.transform(new DOMSource(document), new StreamResult(file));
+            transformer.transform(new DOMSource(document), new StreamResult(file.getPath()));
         } catch (TransformerConfigurationException e) {
             log.error("Transformer configuration error encountered while transforming file " + file.getName(), e);
         } catch (TransformerException e) {
