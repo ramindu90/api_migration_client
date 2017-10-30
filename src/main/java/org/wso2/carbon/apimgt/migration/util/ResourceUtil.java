@@ -214,7 +214,6 @@ public class ResourceUtil {
         if (Constants.SYNAPSE_API_VALUE_VERSION_TYPE_URL.equals(versionType)) {
             String context = apiElement.getAttribute(Constants.SYNAPSE_API_ATTRIBUTE_CONTEXT);
             String version = apiElement.getAttribute(Constants.SYNAPSE_API_ATTRIBUTE_VERSION);
-
             context = context + '/' + version;
             apiElement.setAttribute(Constants.SYNAPSE_API_ATTRIBUTE_CONTEXT, context);
             apiElement.setAttribute(Constants.SYNAPSE_API_ATTRIBUTE_VERSION_TYPE, Constants.SYNAPSE_API_VALUE_VERSION_TYPE_CONTEXT);
@@ -275,9 +274,8 @@ public class ResourceUtil {
         NodeList resourceNodes = document.getElementsByTagName("resource");
         for (int i = 0; i < resourceNodes.getLength(); i++) {
             Element resourceElement = (Element) resourceNodes.item(i);
-
+            resourceElement.setAttribute("faultSequence", "fault");
             updateInSequence(resourceElement, document);
-
             updateOutSequence(resourceElement, document);
         }
     }
